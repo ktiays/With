@@ -21,64 +21,62 @@ public func with<T0, U0>(_ value: T0, @_implicitSelfCapture action: (T0) -> U0) 
 }
 
 @inlinable
-public func with<T0, T1, U0, U1>(
+public func with<T0, T1, U>(
     _ t0: T0,
     _ t1: T1,
-    @_implicitSelfCapture action: (T0, T1) -> (U0, U1)
-) -> (U0, U1) {
+    @_implicitSelfCapture action: (T0, T1) -> U
+) -> U {
     action(t0, t1)
 }
 
 @inlinable
-public func with<T0, T1, T2, U0, U1, U2>(
+public func with<T0, T1, T2, U>(
     _ t0: T0,
     _ t1: T1,
     _ t2: T2,
-    @_implicitSelfCapture action: (T0, T1, T2) -> (U0, U1, U2)
-) -> (U0, U1, U2) {
+    @_implicitSelfCapture action: (T0, T1, T2) -> U
+) -> U {
     action(t0, t1, t2)
 }
 
 @inlinable
-public func with<T0, T1, T2, T3, U0, U1, U2, U3>(
+public func with<T0, T1, T2, T3, U>(
     _ t0: T0,
     _ t1: T1,
     _ t2: T2,
     _ t3: T3,
-    @_implicitSelfCapture action: (T0, T1, T2, T3) -> (U0, U1, U2, U3)
-) -> (U0, U1, U2, U3) {
+    @_implicitSelfCapture action: (T0, T1, T2, T3) -> U
+) -> U {
     action(t0, t1, t2, t3)
 }
 
 @inlinable
-public func with<T0, T1, T2, T3, T4, U0, U1, U2, U3, U4>(
+public func with<T0, T1, T2, T3, T4, U>(
     _ t0: T0,
     _ t1: T1,
     _ t2: T2,
     _ t3: T3,
     _ t4: T4,
-    @_implicitSelfCapture action: (T0, T1, T2, T3, T4) -> (U0, U1, U2, U3, U4)
-) -> (
-    U0, U1, U2, U3, U4
-) {
+    @_implicitSelfCapture action: (T0, T1, T2, T3, T4) -> U
+) -> U {
     action(t0, t1, t2, t3, t4)
 }
 
 @inlinable
-public func with<T0, T1, T2, T3, T4, T5, U0, U1, U2, U3, U4, U5>(
+public func with<T0, T1, T2, T3, T4, T5, U>(
     _ t0: T0,
     _ t1: T1,
     _ t2: T2,
     _ t3: T3,
     _ t4: T4,
     _ t5: T5,
-    @_implicitSelfCapture action: (T0, T1, T2, T3, T4, T5) -> (U0, U1, U2, U3, U4, U5)
-) -> (U0, U1, U2, U3, U4, U5) {
+    @_implicitSelfCapture action: (T0, T1, T2, T3, T4, T5) -> U
+) -> U {
     action(t0, t1, t2, t3, t4, t5)
 }
 
 @inlinable
-public func with<T0, T1, T2, T3, T4, T5, T6, U0, U1, U2, U3, U4, U5, U6>(
+public func with<T0, T1, T2, T3, T4, T5, T6, U>(
     _ t0: T0,
     _ t1: T1,
     _ t2: T2,
@@ -86,13 +84,13 @@ public func with<T0, T1, T2, T3, T4, T5, T6, U0, U1, U2, U3, U4, U5, U6>(
     _ t4: T4,
     _ t5: T5,
     _ t6: T6,
-    @_implicitSelfCapture action: (T0, T1, T2, T3, T4, T5, T6) -> (U0, U1, U2, U3, U4, U5, U6)
-) -> (U0, U1, U2, U3, U4, U5, U6) {
+    @_implicitSelfCapture action: (T0, T1, T2, T3, T4, T5, T6) -> U
+) -> U {
     action(t0, t1, t2, t3, t4, t5, t6)
 }
 
 @inlinable
-public func with<T0, T1, T2, T3, T4, T5, T6, T7, U0, U1, U2, U3, U4, U5, U6, U7>(
+public func with<T0, T1, T2, T3, T4, T5, T6, T7, U>(
     _ t0: T0,
     _ t1: T1,
     _ t2: T2,
@@ -101,13 +99,13 @@ public func with<T0, T1, T2, T3, T4, T5, T6, T7, U0, U1, U2, U3, U4, U5, U6, U7>
     _ t5: T5,
     _ t6: T6,
     _ t7: T7,
-    @_implicitSelfCapture action: (T0, T1, T2, T3, T4, T5, T6, T7) -> (U0, U1, U2, U3, U4, U5, U6, U7)
-) -> (U0, U1, U2, U3, U4, U5, U6, U7) {
+    @_implicitSelfCapture action: (T0, T1, T2, T3, T4, T5, T6, T7) -> U
+) -> U {
     action(t0, t1, t2, t3, t4, t5, t6, t7)
 }
 
 @inlinable
-public func with<T0, T1, T2, T3, T4, T5, T6, T7, T8, U0, U1, U2, U3, U4, U5, U6, U7, U8>(
+public func with<T0, T1, T2, T3, T4, T5, T6, T7, T8, U>(
     _ t0: T0,
     _ t1: T1,
     _ t2: T2,
@@ -117,13 +115,13 @@ public func with<T0, T1, T2, T3, T4, T5, T6, T7, T8, U0, U1, U2, U3, U4, U5, U6,
     _ t6: T6,
     _ t7: T7,
     _ t8: T8,
-    @_implicitSelfCapture action: (T0, T1, T2, T3, T4, T5, T6, T7, T8) -> (U0, U1, U2, U3, U4, U5, U6, U7, U8)
-) -> (U0, U1, U2, U3, U4, U5, U6, U7, U8) {
+    @_implicitSelfCapture action: (T0, T1, T2, T3, T4, T5, T6, T7, T8) -> U
+) -> U {
     action(t0, t1, t2, t3, t4, t5, t6, t7, t8)
 }
 
 @inlinable
-public func with<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, U0, U1, U2, U3, U4, U5, U6, U7, U8, U9>(
+public func with<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, U>(
     _ t0: T0,
     _ t1: T1,
     _ t2: T2,
@@ -134,7 +132,7 @@ public func with<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, U0, U1, U2, U3, U4, U5,
     _ t7: T7,
     _ t8: T8,
     _ t9: T9,
-    @_implicitSelfCapture action: (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9) -> (U0, U1, U2, U3, U4, U5, U6, U7, U8, U9)
-) -> (U0, U1, U2, U3, U4, U5, U6, U7, U8, U9) {
+    @_implicitSelfCapture action: (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9) -> U
+) -> U {
     action(t0, t1, t2, t3, t4, t5, t6, t7, t8, t9)
 }
