@@ -55,21 +55,3 @@ let result = with {
 }
 print(result) // Output: 12
 ```
-
-### Using in SwiftUI
-
-```swift
-struct ContentView: View {
-
-    var body: some View {
-        GeometryReader { geometry in
-            with(geometry.size) { size in
-                VStack {
-                    Text("Width: \(size.width)")
-                    Text("Height: \(size.height)")
-                }
-            }
-        }
-    }
-}
-```
