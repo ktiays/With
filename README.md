@@ -17,7 +17,7 @@ To integrate `With` into your project using Swift Package Manager, add the follo
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/ktiays/With.git", from: "2.0.0")
+    .package(url: "https://github.com/ktiays/With.git", from: "2.1.0")
 ]
 ```
 
