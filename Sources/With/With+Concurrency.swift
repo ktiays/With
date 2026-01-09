@@ -9,15 +9,15 @@ import Foundation
 
 @available(iOS 13.0, macOS 10.15, *)
 @inlinable
-public func with<T>(@_inheritActorContext @_implicitSelfCapture _ action: () async throws -> T) async rethrows -> T {
+public func with<T>(@_inheritActorContext @_implicitSelfCapture _ action: sending () async throws -> T) async rethrows -> T {
     try await action()
 }
 
 @available(iOS 13.0, macOS 10.15, *)
 @inlinable
 public func with<T, U>(
-    @_inheritActorContext @_implicitSelfCapture _ computation: () async throws -> T,
-    @_inheritActorContext @_implicitSelfCapture _ action: (T) async throws -> U
+    @_inheritActorContext @_implicitSelfCapture _ computation: sending () async throws -> T,
+    @_inheritActorContext @_implicitSelfCapture _ action: sending (T) async throws -> U
 ) async rethrows -> U {
     try await action(try await computation())
 }
@@ -26,7 +26,7 @@ public func with<T, U>(
 @inlinable
 public func with<T0, U0>(
     _ value: T0,
-    @_inheritActorContext @_implicitSelfCapture action: (T0) async throws -> U0
+    @_inheritActorContext @_implicitSelfCapture action: sending (T0) async throws -> U0
 ) async rethrows -> U0 {
     try await action(value)
 }
@@ -36,7 +36,7 @@ public func with<T0, U0>(
 public func with<T0, T1, U>(
     _ t0: T0,
     _ t1: T1,
-    @_inheritActorContext @_implicitSelfCapture action: (T0, T1) async throws -> U
+    @_inheritActorContext @_implicitSelfCapture action: sending (T0, T1) async throws -> U
 ) async rethrows -> U {
     try await action(t0, t1)
 }
@@ -47,7 +47,7 @@ public func with<T0, T1, T2, U>(
     _ t0: T0,
     _ t1: T1,
     _ t2: T2,
-    @_inheritActorContext @_implicitSelfCapture action: (T0, T1, T2) async throws -> U
+    @_inheritActorContext @_implicitSelfCapture action: sending (T0, T1, T2) async throws -> U
 ) async rethrows -> U {
     try await action(t0, t1, t2)
 }
@@ -59,7 +59,7 @@ public func with<T0, T1, T2, T3, U>(
     _ t1: T1,
     _ t2: T2,
     _ t3: T3,
-    @_inheritActorContext @_implicitSelfCapture action: (T0, T1, T2, T3) async throws -> U
+    @_inheritActorContext @_implicitSelfCapture action: sending (T0, T1, T2, T3) async throws -> U
 ) async rethrows -> U {
     try await action(t0, t1, t2, t3)
 }
@@ -72,7 +72,7 @@ public func with<T0, T1, T2, T3, T4, U>(
     _ t2: T2,
     _ t3: T3,
     _ t4: T4,
-    @_inheritActorContext @_implicitSelfCapture action: (T0, T1, T2, T3, T4) async throws -> U
+    @_inheritActorContext @_implicitSelfCapture action: sending (T0, T1, T2, T3, T4) async throws -> U
 ) async rethrows -> U {
     try await action(t0, t1, t2, t3, t4)
 }
@@ -86,7 +86,7 @@ public func with<T0, T1, T2, T3, T4, T5, U>(
     _ t3: T3,
     _ t4: T4,
     _ t5: T5,
-    @_inheritActorContext @_implicitSelfCapture action: (T0, T1, T2, T3, T4, T5) async throws -> U
+    @_inheritActorContext @_implicitSelfCapture action: sending (T0, T1, T2, T3, T4, T5) async throws -> U
 ) async rethrows -> U {
     try await action(t0, t1, t2, t3, t4, t5)
 }
@@ -101,7 +101,7 @@ public func with<T0, T1, T2, T3, T4, T5, T6, U>(
     _ t4: T4,
     _ t5: T5,
     _ t6: T6,
-    @_inheritActorContext @_implicitSelfCapture action: (T0, T1, T2, T3, T4, T5, T6) async throws -> U
+    @_inheritActorContext @_implicitSelfCapture action: sending (T0, T1, T2, T3, T4, T5, T6) async throws -> U
 ) async rethrows -> U {
     try await action(t0, t1, t2, t3, t4, t5, t6)
 }
@@ -117,7 +117,7 @@ public func with<T0, T1, T2, T3, T4, T5, T6, T7, U>(
     _ t5: T5,
     _ t6: T6,
     _ t7: T7,
-    @_inheritActorContext @_implicitSelfCapture action: (T0, T1, T2, T3, T4, T5, T6, T7) async throws -> U
+    @_inheritActorContext @_implicitSelfCapture action: sending (T0, T1, T2, T3, T4, T5, T6, T7) async throws -> U
 ) async rethrows -> U {
     try await action(t0, t1, t2, t3, t4, t5, t6, t7)
 }
@@ -134,7 +134,7 @@ public func with<T0, T1, T2, T3, T4, T5, T6, T7, T8, U>(
     _ t6: T6,
     _ t7: T7,
     _ t8: T8,
-    @_inheritActorContext @_implicitSelfCapture action: (T0, T1, T2, T3, T4, T5, T6, T7, T8) async throws -> U
+    @_inheritActorContext @_implicitSelfCapture action: sending (T0, T1, T2, T3, T4, T5, T6, T7, T8) async throws -> U
 ) async rethrows -> U {
     try await action(t0, t1, t2, t3, t4, t5, t6, t7, t8)
 }
@@ -152,7 +152,7 @@ public func with<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, U>(
     _ t7: T7,
     _ t8: T8,
     _ t9: T9,
-    @_inheritActorContext @_implicitSelfCapture action: (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9) async throws -> U
+    @_inheritActorContext @_implicitSelfCapture action: sending (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9) async throws -> U
 ) async rethrows -> U {
     try await action(t0, t1, t2, t3, t4, t5, t6, t7, t8, t9)
 }
