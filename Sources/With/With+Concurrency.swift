@@ -9,12 +9,6 @@ import Foundation
 
 @available(iOS 13.0, macOS 10.15, *)
 @inlinable
-public func with<T>(@_inheritActorContext @_implicitSelfCapture _ action: sending () async throws -> T) async rethrows -> T {
-    try await action()
-}
-
-@available(iOS 13.0, macOS 10.15, *)
-@inlinable
 public func with<T, U>(
     @_inheritActorContext @_implicitSelfCapture _ computation: sending () async throws -> T,
     @_inheritActorContext @_implicitSelfCapture _ action: sending (T) async throws -> U

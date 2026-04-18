@@ -6,11 +6,6 @@
 import Foundation
 
 @inlinable
-public func with<T>(@_implicitSelfCapture _ action: () throws -> T) rethrows -> T {
-    try action()
-}
-
-@inlinable
 public func with<T, U>(
     @_implicitSelfCapture _ computation: () throws -> T,
     @_implicitSelfCapture _ action: (T) throws -> U
